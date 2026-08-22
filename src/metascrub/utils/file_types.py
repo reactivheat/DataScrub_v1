@@ -21,6 +21,19 @@ def is_supported(path: Path) -> bool:
 
 
 def get_file_category(path: Path) -> str:
-    """Return 'image' | 'pdf' | 'office' | 'unknown' — used to pick the right reader/scrubber."""
-    # TODO: map extension -> category string
-    raise NotImplementedError
+    """Return 'image' | 'pdf' | 'office' | 'unknown' — used to pick the right reader/scrubber.
+
+    Args:
+        path: A Path object representing the file.
+
+    Returns:
+        Category string: 'image', 'pdf', 'office', or 'unknown'.
+    """
+    ext = path.suffix.lower()
+    if ext in {".jpg", ".jpeg", ".png"}:
+        return "image"
+    if ext == ".pdf":
+        return "pdf"
+    if ext in {".docx", ".xlsx"}:
+        return "office"
+    return "unknown"
