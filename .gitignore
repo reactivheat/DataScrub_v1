@@ -1,15 +1,56 @@
+```python
+# Compiled Python files
+*.pyc
 __pycache__/
-*.py[cod]
-*.egg-info/
-.pytest_cache/
-.ruff_cache/
-.coverage
-htmlcov/
+
+# Dependencies
 .venv/
 venv/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build/dist directories
 build/
 dist/
-cleaned/
-*.html
-!docs/**/*.html
+*.egg
+*.egg-info/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.coverage.*
+.nox/
+.tox/
+
+# Type checking
+.mypy_cache/
+.pytest_cache/
+.hypothesis/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+```

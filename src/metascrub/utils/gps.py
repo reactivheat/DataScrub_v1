@@ -12,10 +12,15 @@ def dms_to_decimal(dms: tuple, ref: str) -> float:
     Convert an EXIF GPS DMS tuple (degrees, minutes, seconds) + hemisphere
     ref ('N'/'S'/'E'/'W') into a signed decimal degree float.
 
-    TODO:
+    Args:
+        dms: A tuple of (degrees, minutes, seconds).
+        ref: Hemisphere reference ('N', 'S', 'E', or 'W').
+
+    Returns:
+        Signed decimal degree as a float.
+    """
     degrees, minutes, seconds = dms
     decimal = degrees + minutes / 60 + seconds / 3600
-    if ref in ("S", "W"): decimal = -decimal
+    if ref in ("S", "W"):
+        decimal = -decimal
     return decimal
-    """
-    raise NotImplementedError
